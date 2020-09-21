@@ -8,6 +8,7 @@ import { useParams } from "react-router-dom";
 import db from "./firebase";
 import { useStateValue } from './StateProvider';
 import firebase from "firebase";
+import SendIcon from '@material-ui/icons/Send';
 
 function Chat() {
     const [seed, setSeed] = useState("");
@@ -95,11 +96,15 @@ function Chat() {
                         onChange={(e) => setInput(e.target.value)}
                         placeholder="Type a message"
                         type="text" />
-                    <button
+                    {/* <button
                         onClick={sendMessage}
-                        type="submit">Send a message</button>
+                        type="submit">Send a message</button> */}
+                    <IconButton onClick={sendMessage}
+                        type="submit">
+                        <SendIcon />
+                    </IconButton>
                 </form>
-                <MicIcon />
+                {/* <MicIcon /> */}
             </div>
         </div>
     )
